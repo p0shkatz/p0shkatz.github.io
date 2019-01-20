@@ -1,4 +1,6 @@
-This is the first blog in a series where I talk about my favorite .NET class of 2018. For a while now, I have been intrigued with the simple capabilities of System.IO.File. It invokes some of the basic input/output Windows APIs used to read and write data. As you can guess, this is used heavily by C# developers. I'm going to veer slightly (SQUIRREL!) before we get back to File.
+This is the first blog in a series where I talk about my favorite .NET class of 2018. I learned some neat tricks/techniques with the class that I thought I'd share some of my findings. None of these are overly complex. Some of these are so fundamental, their value may not be totally apparent, until you are in the right context.
+
+For a while now, I have been intrigued with the simple capabilities of System.IO.File. It invokes some of the basic input/output Windows APIs used to read and write data. As you can guess, this is used heavily by C# developers. I'm going to veer slightly (SQUIRREL!) before we get back to File.
 
 A few years ago when I was working as a blue teamer helping product owners secure their platform and their products, we needed to figure out was overwriting a configuration file. We assumed a legitimate process was doing it, but the vendor could not explain what was causing the behavior. This was my introduction to the (System.IO) FileSystemWatcher class. Using FileSystemWatcher and file auditing, we were able to isolate the offending process (and user) and add some automation to replace the modification with our original values.
 
