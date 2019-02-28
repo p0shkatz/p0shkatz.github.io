@@ -23,4 +23,7 @@ The longer version of my logic is that it would wait for the service to write th
 
 Next, the script grabs the MD5 hash of the legitimate batch file and stores that for comparison later. Then, the PowerShell script copies over my evil batch file, replacing the legitimate file. It compares the current batch MD5 with the legitimate MD5. If the current MD5 does not match our evil MD5, it continues to copy it (loop/brute-copy). The purpose of checking the MD5 is in case the service hasn't finished commiting changes (sloppy brute-copy). At this point, the service runs my code. I didn't know what to have it execute, so I simply had it run a reverse PowerShell shell.
 
-Eventing in Windows is a powerful concept. File system events are only one part of it. As always, if you want to learn more, I recommend reading up on the official Microsoft documentation. More to come on System.IO.File.
+Eventing in Windows is a powerful concept. File system events are only one part of it. As always, if you want to learn more, I recommend reading up on the official Microsoft documentation. More to come on System.IO.File. Meanwhile, here's the poc I used:
+
+https://gist.github.com/p0shkatz/f81656b7b6ac7ee62fd5ffb77c501133
+
